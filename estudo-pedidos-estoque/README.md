@@ -4,18 +4,6 @@ Projeto de estudo para praticar a integração entre três tecnologias, cada uma
 bem definido. O domínio é um mini sistema de vendas: cadastro de produtos, controle de estoque
 e pedidos com cálculo de preço (descontos, cupom e frete).
 
-## Arquitetura
-
-```
-┌─────────────┐   /api    ┌──────────────────┐   HTTP/JSON   ┌────────────────────┐
-│ web-react   │ ────────▶ │ api-node         │ ────────────▶ │ pricing-java       │
-│ React + Vite│           │ Express + SQLite │               │ Spring Boot        │
-│ :5173       │ ◀──────── │ :3001            │ ◀──────────── │ :8081              │
-└─────────────┘           └──────────────────┘               └────────────────────┘
-   interface               CRUD, estoque,                      regras de preço
-                           pedidos e banco                     (sem banco, sem estado)
-```
-
 | Parte | Tecnologia | O que demonstra |
 |-------|-----------|-----------------|
 | `web-react` | React 19, Vite | Hooks (`useState`, `useEffect`, `useMemo`, `useCallback`), formulários controlados, validação, *debounce* de busca, proteção contra respostas fora de ordem, tema claro/escuro |
